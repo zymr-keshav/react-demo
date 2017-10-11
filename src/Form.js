@@ -16,7 +16,7 @@ class NameForm extends Component {
 
     handleSubmit(event) {
         alert('A essay was submitted', this.state.value);
-        console.log(this.state.value);
+        // console.log(this.state.value);
         event.preventDefault();
     }
 
