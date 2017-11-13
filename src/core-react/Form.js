@@ -4,19 +4,21 @@ class NameForm extends Component {
 
     constructor(props) {
         super(props);
-        // this.state = {value: 'Please write textarea essay here'};
-        this.state ={value: 'coconut'};
+        this.state = {value: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.focusTextInput = this.focusTextInput.bind(this);
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
     }
+    focusTextInput() {
+        this.textInput.focus();
+    }
 
     handleSubmit(event) {
-        alert('A essay was submitted', this.state.value);
-        // console.log(this.state.value);
+        alert('A form was submitted', event.target.value);
         event.preventDefault();
     }
 
@@ -24,16 +26,10 @@ class NameForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>Name:
-                    {/* <input type="text" value={this.state.value} onChange={this.handleChange}/> */}
+                    <input defaultValue="Keshav" type="text" ref={(input) => this.textInput = input}/>
                     {/*<textarea value={this.state.value} onChange={this.handleChange}/> */}
-                    Pick your favorite La Croix flavor:
-                  <select value={this.state.value} onChange={this.handleChange}>
-                    <option value="grapefruit">Grapefruit</option>
-                    <option value="lime">Lime</option>
-                    <option value="coconut">Coconut</option>
-                    <option value="mango">Mango</option>
-                  </select>
                 </label>
+                <input type="button" value="focus" onClick={this.focusTextInput}/>
                 <input type="submit" value="Submit"/>
             </form>
         );

@@ -5,17 +5,29 @@ import Toggle from './Toggle';
 function ActionLink () {
      function handleClick (e) {
         e.preventDefault();
-        console.log('Link was clicked');
+        // console.log('Link was clicked');
     }
 
     return (
-            <button  onClick={handleClick}>Click me </button>
+        <button  onClick={handleClick}>Click me </button>
     );
 }
 
 function FormattedDate(props) {
-    return <h2>Current Date is {props.date.toString()}</h2>
+    return <h2>Current Date is {props.date.toString()}</h2>;
 }
+
+const MyComponents = {
+    DatePicker: (props) => {
+        return <div>Using Spread Operator with property color: {props.color} , size: {props.size} and wait: {props.wait ? 'No wait' : 'Infinite Time'}.</div>;
+    }
+};
+
+function BlueDatePicker() {
+    const about = {color:'red', size:5, wait: false};
+    return <MyComponents.DatePicker {...about} />;
+}
+
 
 class Waqt extends Component {
     constructor(props) {
@@ -42,15 +54,19 @@ class Waqt extends Component {
     render() {
         return (
                 <div>
-                    <h1>Hello, Moto</h1>
+                    <h1>Hello, {this.props.name}</h1>
                     <FormattedDate date={this.state.date} />
-                    <h2>it is {this.state.date.toLocaleTimeString()}.</h2>
                    <ActionLink />
                    <Toggle />
+                   <BlueDatePicker />
                 </div>
         );
     }
 }
+
+Waqt.defaultProps = {
+    name : 'Mudra'
+};
 
 export default Waqt;
 
