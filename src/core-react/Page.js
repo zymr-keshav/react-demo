@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Clock from './Clock'
+
 class Page extends Component {
 
     constructor(props) {
@@ -35,6 +37,7 @@ function WarningBanner(props) {
   return (
     <div className="warning">
       Warning!
+    <Clock />
     </div>
   );
 }

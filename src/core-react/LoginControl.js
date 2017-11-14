@@ -2,9 +2,7 @@ import React from 'react';
 
 import Greeting from './Greeting';
 
-import Map from './map';
-
-
+// import Map from './map';
 import ErrorBoundary from './ErrorBoundary';
 
 
@@ -36,7 +34,7 @@ class LoginControl extends React.Component {
         : ( <LoginButton onClick = { this.handleLoginClick } /> )
       }
       </ErrorBoundary>
-      <Map / >
+      {/* <Map / > */}
       </div>
     );
   }

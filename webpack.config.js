@@ -14,8 +14,10 @@ var config = {
     publicPath: '/'
   },
   devServer: {
-        inline: false,
-        contentBase: "./public",
+        inline: true,
+        historyApiFallback: true,
+        hot: true,
+        contentBase: "./public"
   },
   module: {
     loaders: [
@@ -40,6 +42,11 @@ var config = {
       {
         test: /\.jpe?g$|\.gif$|\.png$|^(?!.*\.inline\.svg$).*\.svg$/,
         loader: 'url-loader'
+      },
+      {
+          test: /\.(woff2?|eot|ttf)$/i,
+          exclude: /node_modules/,
+          loader: 'url-loader'
       }
     ]
   },
