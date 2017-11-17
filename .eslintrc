@@ -1,6 +1,6 @@
 {
     "parser": "babel-eslint",
-    "extends": ["react-app"],
+    "extends": ["react-app", "plugin:jsx-a11y/recommended"],
     "env": {
         "browser": true,
         "es6": true,
@@ -15,10 +15,10 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react", "html"
+        "react", "html", "jsx-a11y"
     ],
     "settings": {
-        "html/html-extensions": [".html"],
+        "html/html-extensions": [".html"]
     },
     "rules": {
         "react/jsx-uses-react": "error",

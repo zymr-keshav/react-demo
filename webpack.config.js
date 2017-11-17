@@ -2,17 +2,17 @@
 var path = require('path');
 // var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var BUILD_DIR = path.resolve(__dirname, 'public');
-var APP_DIR = path.resolve(__dirname, 'src');
+var APP_DIR = path.resolve(__dirname, 'src/async');
 
 var config = {
   context : __dirname,
-  entry: APP_DIR + '/core-react/index.jsx',
-  // entry: APP_DIR + '/index.js',
+  entry: APP_DIR + '/index.jsx',
   output: {
     path: BUILD_DIR ,
     filename: "bundle.js",
     publicPath: '/'
   },
+  devtool : 'inline-source-map',
   devServer: {
         inline: true,
         historyApiFallback: true,

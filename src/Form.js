@@ -34,8 +34,8 @@ class BlockingForm extends Component {
         const { isBlocking } = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>Name:
-                    <input type="text" ref={(input) => this.textInput = input} onChange={this.handleChange}/>
+                <label htmlFor="name" >Name:
+                    <input type="text" id="name" ref={(input) => this.textInput = input} onChange={this.handleChange}/>
                     {/*<textarea value={this.state.value} onChange={this.handleChange}/> */}
                 </label>
                 <input type="button" value="focus" onClick={this.focusTextInput}/>

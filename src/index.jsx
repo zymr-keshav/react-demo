@@ -12,6 +12,8 @@ import { PrivateRoute } from './PrivateRoute'
 import BlockingForm from './Form'
 import SideBar from './SideBar'
 
+import { store } from './store';
+
 const Public = () => <h3>Public </h3>
 const Protected = () => <h3>Protected</h3>
 const Home = () => <div><h3>Home</h3><SideBar/></div>

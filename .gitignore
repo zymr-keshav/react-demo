@@ -17,6 +17,8 @@
 .env.production.local
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
+*.vscode
 
 npm-debug.log*
 yarn-debug.log*
