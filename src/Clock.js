@@ -9,7 +9,7 @@ function ActionLink () {
     }
 
     return (
-        <button  onClick={handleClick}>Click me </button>
+        <button onClick={handleClick}>Click me </button>
     );
 }
 

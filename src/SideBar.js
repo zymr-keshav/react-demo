@@ -5,6 +5,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import OptionModal from './OptionModal';
+
 const routes = [
   { path: '/',
     exact: true,
@@ -30,7 +32,7 @@ const Sidebar = () => (
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/bubblegum">Bubblegum</Link>
+            <Link to="/bubblegum" >Bubblegum</Link>
           </li>
           <li>
             <Link to="/shoelaces">Shoelaces</Link>

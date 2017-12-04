@@ -2,7 +2,7 @@
 var path = require('path');
 // var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var BUILD_DIR = path.resolve(__dirname, 'public');
-var APP_DIR = path.resolve(__dirname, 'src/async');
+var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
   context : __dirname,
@@ -12,7 +12,7 @@ var config = {
     filename: "bundle.js",
     publicPath: '/'
   },
-  devtool : 'inline-source-map',
+  devtool : 'cheap-module-inline-source-map',
   devServer: {
         inline: true,
         historyApiFallback: true,
@@ -33,7 +33,7 @@ var config = {
       },
       {
         test: /\.css$/,
-        loader: [ 'style-loader', 'css-loader' ]
+        use: [ 'style-loader', 'css-loader' ]
       },
       {
         test: /\.inline.svg$/,
